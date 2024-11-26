@@ -1,2 +1,5 @@
 /test_env
 /asl_frames
+/asl_dataset
+/__pycache__
+/asl_model.h5

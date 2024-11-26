@@ -1,4 +1,4 @@
-# Google-Developer-Group-CV
+# ASLingo
 
 ## Important Notes
 

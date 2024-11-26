@@ -1,6 +1,7 @@
 from keras.applications import MobileNetV2
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, GlobalAveragePooling2D
+from keras.regularizers import l2
 
 def get_model(input_shape=(64, 64, 3), num_classes=36):
     """
@@ -20,8 +21,8 @@ def get_model(input_shape=(64, 64, 3), num_classes=36):
     model = Sequential([
         base_model,
         GlobalAveragePooling2D(),
-        Dense(256, activation='relu'),
-        Dropout(0.3),
+        Dense(256, activation='relu', kernel_regularizer=l2(0.01)),
+        Dropout(0.5),
         Dense(num_classes, activation='softmax')  # 36 classes
     ])
 

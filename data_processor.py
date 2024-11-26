@@ -14,7 +14,14 @@ def load_data(data_dir, img_size=(64, 64), batch_size=32, validation_split=0.2):
         train_data: Training data generator.
         val_data: Validation data generator.
     """
-    datagen = ImageDataGenerator(rescale=1./255, validation_split=validation_split)
+    datagen = ImageDataGenerator(
+        rescale=1./255,
+        rotation_range=15,
+        width_shift_range=0.1,
+        height_shift_range=0.1,
+        zoom_range=0.1,
+        validation_split=0.2
+    )
     
     train_data = datagen.flow_from_directory(
         data_dir,

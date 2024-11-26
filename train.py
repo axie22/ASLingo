@@ -19,6 +19,10 @@ history = model.fit(
     epochs=10
 )
 
+print(history.history['accuracy'])
+print(history.history['val_accuracy'])
+
+
 # Save the trained model
 model.save('asl_model.h5')
 model.summary()

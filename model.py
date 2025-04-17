@@ -22,7 +22,7 @@ def get_model(input_shape=(64, 64, 3), num_classes=36):
         base_model,
         GlobalAveragePooling2D(),
         Dense(256, activation='relu', kernel_regularizer=l2(0.01)),
-        Dropout(0.5),
+        Dropout(0.4),
         Dense(num_classes, activation='softmax')  # 36 classes
     ])
 
